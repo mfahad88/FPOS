@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ProductsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:id="@+id/linear_top"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Product Name"
+            android:gravity="center_vertical"
+            android:padding="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/drawable_square_txt"
+            android:id="@+id/edt_product_name"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Brand Name"
+            android:gravity="center_vertical"
+            android:padding="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/drawable_square_txt"
+            android:id="@+id/edt_brand_name"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Barcode"
+            android:gravity="center_vertical"
+            android:padding="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:inputType="number"
+            android:background="@drawable/drawable_square_txt"
+            android:id="@+id/edt_barcode"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Sell Price"
+            android:gravity="center_vertical"
+            android:padding="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:inputType="numberDecimal"
+            android:background="@drawable/drawable_square_txt"
+            android:id="@+id/edt_sell_price"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Quantity"
+            android:gravity="center_vertical"
+            android:padding="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:inputType="number"
+            android:background="@drawable/drawable_square_txt"
+            android:id="@+id/edt_quantity"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Buying Price"
+            android:gravity="center_vertical"
+            android:padding="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:inputType="numberDecimal"
+            android:background="@drawable/drawable_square_txt"
+            android:id="@+id/edt_buying_price"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_add_box"
+            android:id="@+id/image_add"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_top"
+        android:id="@+id/linear_top_1"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Buying Price"
+            android:gravity="center_vertical"
+            android:padding="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:inputType="numberDecimal"
+            android:background="@drawable/drawable_square_txt"
+            android:id="@+id/edt"/>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_health_beauty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:nestedScrollingEnabled="true"
+        android:layout_below="@id/linear_top_1"
+        android:layout_centerHorizontal="true"
+        android:animateLayoutChanges="false"
+        android:clipToPadding="false"
+        />
+
+
+</RelativeLayout>
