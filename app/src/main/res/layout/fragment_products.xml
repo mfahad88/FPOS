@@ -5,19 +5,21 @@
     android:layout_height="match_parent"
     tools:context=".fragment.ProductsFragment">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
-        android:id="@+id/linear_top"
+        android:id="@+id/relative_top"
         android:gravity="center_horizontal">
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Product Name"
             android:gravity="center_vertical"
             android:padding="7dp"
+            android:layout_alignParentLeft="true"
+            android:maxLines="1"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
             android:background="@drawable/drawable_square_txt"
@@ -25,9 +27,11 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Brand Name"
             android:gravity="center_vertical"
+            android:layout_toRightOf="@id/edt_product_name"
+            android:maxLines="1"
             android:padding="7dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
@@ -36,9 +40,11 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Barcode"
             android:gravity="center_vertical"
+            android:layout_toRightOf="@id/edt_brand_name"
+            android:maxLines="1"
             android:padding="7dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
@@ -48,9 +54,11 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Sell Price"
             android:gravity="center_vertical"
+            android:layout_toRightOf="@id/edt_barcode"
+            android:maxLines="1"
             android:padding="7dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
@@ -60,9 +68,11 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Quantity"
             android:gravity="center_vertical"
+            android:layout_toRightOf="@id/edt_sell_price"
+            android:maxLines="1"
             android:padding="7dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
@@ -72,9 +82,11 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Buying Price"
             android:gravity="center_vertical"
+            android:layout_toRightOf="@id/edt_quantity"
+            android:maxLines="1"
             android:padding="7dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
@@ -83,46 +95,52 @@
             android:id="@+id/edt_buying_price"/>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/edt_buying_price"
+            android:layout_alignTop="@id/edt_buying_price"
+            android:layout_alignBottom="@id/edt_buying_price"
             android:src="@drawable/ic_add_box"
+            android:scaleType="fitCenter"
             android:id="@+id/image_add"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear_top"
-        android:id="@+id/linear_top_1"
-        android:padding="5dp"
-        android:orientation="vertical">
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:hint="Buying Price"
+            android:layout_height="wrap_content"
+            android:hint="Reorder"
             android:gravity="center_vertical"
+            android:layout_below="@id/edt_product_name"
+            android:maxLines="1"
             android:padding="7dp"
+            android:layout_marginTop="2dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
             android:inputType="numberDecimal"
             android:background="@drawable/drawable_square_txt"
-            android:id="@+id/edt"/>
+            android:id="@+id/edt_reorder"/>
+    </RelativeLayout>
 
-    </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_health_beauty"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        android:nestedScrollingEnabled="true"
-        android:layout_below="@id/linear_top_1"
-        android:layout_centerHorizontal="true"
-        android:animateLayoutChanges="false"
-        android:clipToPadding="false"
-        />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_top"
+        android:orientation="vertical">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_health_beauty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:nestedScrollingEnabled="false"
+            android:layout_centerHorizontal="true"
+            android:animateLayoutChanges="false"
+            android:clipToPadding="false"
+            />
+    </LinearLayout>
 
 
 </RelativeLayout>
